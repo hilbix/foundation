@@ -29,11 +29,14 @@
   if($('head').has('.foundation-mq-xxlarge').length === 0) {
     $('head').append('<meta class="foundation-mq-xxlarge">');
   }
-
-  // Enable FastClick if present
+  
+  // Enable FastClick
   $(function() {
     if(typeof FastClick !== 'undefined') {
-      FastClick.attach(document.body);
+      // Don't attach to body if undefined
+      if (typeof document.body !== 'undefined') {
+        FastClick.attach(document.body);
+      }
     }
   });
 
