@@ -153,6 +153,11 @@ module.exports = function(grunt) {
         tasks: ['copy', 'concat', 'uglify'],
         options: {livereload:true}
       },
+      jst: {
+        files: ['doc/templates/*.html'],
+        tasks: ['jst'],
+        options: {livereload:false}
+      },
       dist_docs: {
         files: ['doc/{includes,layouts}/**/*.html'],
         tasks: ['assemble'],
